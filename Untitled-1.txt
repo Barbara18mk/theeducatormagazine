@@ -1,0 +1,1 @@
+Install Command: pnpm install --no-frozen-lockfile
