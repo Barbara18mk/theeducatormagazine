@@ -18,19 +18,30 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode
-}>) {
+}) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
+    <html lang="en" suppressHydrationWarning>
+      <body className={inter.className} suppressHydrationWarning>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="light"
+          enableSystem={false}
+          disableTransitionOnChange
+        >
           <ArticleProvider>
-            <UsersProvider>
-              <CommentsProvider>
-                <TeamProvider>{children}</TeamProvider>
-              </CommentsProvider>
-            </UsersProvider>
+            <CommentsProvider>
+              <UsersProvider>
+                <TeamProvider>
+                  <SiteHeader />
+                  <main className="min-h-screen">
+                    {children}
+                  </main>
+                  <SiteFooter />
+                </TeamProvider>
+              </UsersProvider>
+            </CommentsProvider>
           </ArticleProvider>
         </ThemeProvider>
       </body>

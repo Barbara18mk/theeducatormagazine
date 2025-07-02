@@ -11,11 +11,24 @@ const nextConfig = {
     unoptimized: true,
     domains: ['localhost'],
   },
-  experimental: {
-    serverComponentsExternalPackages: [],
-  },
+  serverExternalPackages: [],
   // Fix for deployment
   output: 'standalone',
+  
+  // Fix cross-origin warning in development
+  async headers() {
+    return [
+      {
+        source: '/_next/:path*',
+        headers: [
+          {
+            key: 'Access-Control-Allow-Origin',
+            value: '*',
+          },
+        ],
+      },
+    ]
+  },
 }
 
 export default nextConfig
