@@ -21,7 +21,8 @@ export function middleware(request: NextRequest) {
 
   // Rate limiting for API routes (basic implementation)
   if (pathname.startsWith("/api/")) {
-    const ip = request.ip || request.headers.get("x-forwarded-for") || "unknown"
+    const forwarded = request.headers.get("x-forwarded-for")
+    const ip = forwarded ? forwarded.split(',')[0] : request.headers.get("x-real-ip") || "unknown"
     // In production, implement proper rate limiting with Redis or similar
     console.log(`API request from ${ip} to ${pathname}`)
   }

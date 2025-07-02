@@ -1,3 +1,4 @@
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   eslint: {
@@ -8,7 +9,13 @@ const nextConfig = {
   },
   images: {
     unoptimized: true,
+    domains: ['localhost'],
   },
+  experimental: {
+    serverComponentsExternalPackages: [],
+  },
+  // Fix for deployment
+  output: 'standalone',
 }
 
 export default nextConfig
