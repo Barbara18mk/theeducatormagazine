@@ -201,7 +201,6 @@ export default function ArticlesPage() {
           </div>
         </section>
       </main>
-      <SiteFooter />
     </div>
   )
 }

@@ -1,33 +1,20 @@
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
-  typescript: {
-    ignoreBuildErrors: true,
-  },
+  output: 'export',
+  trailingSlash: true,
+  distDir: 'out',
   images: {
     unoptimized: true,
-    domains: ['localhost'],
+    loader: 'custom',
+    loaderFile: './lib/image-loader.js'
   },
-  serverExternalPackages: [],
-  // Fix for deployment
-  output: 'standalone',
-  
-  // Fix cross-origin warning in development
-  async headers() {
-    return [
-      {
-        source: '/_next/:path*',
-        headers: [
-          {
-            key: 'Access-Control-Allow-Origin',
-            value: '*',
-          },
-        ],
-      },
-    ]
+  experimental: {
+    suppressHydrationWarning: true
+  },
+  assetPrefix: process.env.NODE_ENV === 'production' ? '' : '',
+  basePath: '',
+  env: {
+    CUSTOM_KEY: 'my-value',
   },
 }
 

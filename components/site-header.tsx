@@ -11,7 +11,7 @@ export function SiteHeader() {
   const [showSearch, setShowSearch] = useState(false)
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-warm-200 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 w-full border-b border-gray-200 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/90 shadow-sm">
       <div className="container flex h-16 items-center">
         <Sheet>
           <SheetTrigger asChild>
@@ -60,9 +60,14 @@ export function SiteHeader() {
           </SheetContent>
         </Sheet>
         <Link href="/" className="mr-6 flex items-center space-x-2">
-          <span className="font-bold text-xl bg-gradient-to-r from-warm-600 to-terracotta-600 bg-clip-text text-transparent">
-            THE EDUCATOR
-          </span>
+          <div className="flex items-center gap-2">
+            <div className="w-8 h-8 bg-gradient-to-br from-amber-500 to-orange-600 rounded-lg flex items-center justify-center">
+              <span className="text-white font-bold text-sm">E</span>
+            </div>
+            <span className="font-serif font-bold text-xl text-gray-900">
+              THE EDUCATOR
+            </span>
+          </div>
         </Link>
         <nav className="hidden md:flex items-center gap-4 text-sm overflow-x-auto flex-nowrap">
           <Link href="/" className="font-medium transition-colors hover:text-warm-700 whitespace-nowrap">

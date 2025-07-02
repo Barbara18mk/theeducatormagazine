@@ -3,13 +3,19 @@ import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react"
 
 export function SiteFooter() {
   return (
-    <footer className="w-full border-t border-warm-200 bg-gradient-to-br from-warm-50 to-sage-50">
+    <footer className="w-full border-t border-gray-200 bg-gray-900 text-white">
       <div className="container flex flex-col gap-8 py-12 md:py-16">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
           <div className="flex flex-col gap-2">
-            <h3 className="text-lg font-semibold text-warm-800">THE EDUCATOR MAGAZINE</h3>
-            <p className="text-sm text-warm-600">
-              Insights, innovations, and inspiration for modern educators and educational leaders.
+            <div className="flex items-center gap-2 mb-2">
+              <div className="w-8 h-8 bg-gradient-to-br from-amber-500 to-orange-600 rounded-lg flex items-center justify-center">
+                <span className="text-white font-bold text-sm">E</span>
+              </div>
+              <h3 className="font-serif text-lg font-bold text-white">THE EDUCATOR MAGAZINE</h3>
+            </div>
+            <p className="text-sm text-gray-300 leading-relaxed">
+              Your premier destination for educational insights, innovations, and inspiration. 
+              Connecting educators worldwide with cutting-edge content and expert perspectives.
             </p>
           </div>
           <div className="flex flex-col gap-2">
