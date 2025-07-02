@@ -39,7 +39,7 @@ export function useAuth() {
       throw new Error("Too many login attempts. Please try again in 15 minutes.")
     }
 
-    // In production, this should be hashed and compared with a secure backend
+    // Get admin password from environment variables
     const adminPassword = process.env.NEXT_PUBLIC_ADMIN_PASSWORD || "SecureAdmin123!"
 
     if (password === adminPassword) {
