@@ -7,6 +7,8 @@ import { ArticleProvider } from "@/lib/article-context"
 import { UsersProvider } from "@/lib/users-context"
 import { CommentsProvider } from "@/lib/comments-context"
 import { TeamProvider } from "@/lib/team-context"
+import { SiteHeader } from "@/components/site-header"
+import { SiteFooter } from "@/components/site-footer"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -31,8 +33,8 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <ArticleProvider>
-            <CommentsProvider>
-              <UsersProvider>
+            <UsersProvider>
+              <CommentsProvider>
                 <TeamProvider>
                   <SiteHeader />
                   <main className="min-h-screen">
@@ -40,8 +42,8 @@ export default function RootLayout({
                   </main>
                   <SiteFooter />
                 </TeamProvider>
-              </UsersProvider>
-            </CommentsProvider>
+              </CommentsProvider>
+            </UsersProvider>
           </ArticleProvider>
         </ThemeProvider>
       </body>
