@@ -7,8 +7,8 @@ import { ArticleProvider } from "@/lib/article-context"
 import { UsersProvider } from "@/lib/users-context"
 import { CommentsProvider } from "@/lib/comments-context"
 import { TeamProvider } from "@/lib/team-context"
-import { SiteHeader } from "@/components/site-header"
-import { SiteFooter } from "@/components/site-footer"
+import SiteHeader from "@/components/site-header"
+import SiteFooter from "@/components/site-footer"
 
 const inter = Inter({ subsets: ["latin"] })
 

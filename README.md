@@ -2,6 +2,9 @@
 
 A modern, secure digital magazine platform built for educators worldwide. Features a responsive design, comprehensive admin dashboard, and robust content management system.
 
+🌐 **Live Demo**: [View on Replit](https://your-repl-name.your-username.repl.co)
+📂 **GitHub**: [Repository](https://github.com/your-username/the-educator-magazine)
+
 ## 🚀 Features
 
 - **Modern Design**: Warm, welcoming color palette with mobile-first responsive design
